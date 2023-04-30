@@ -18,7 +18,6 @@ function taskadd(task, description) {
     return;
   }
 
-  // Verifica se a tarefa já existe na lista, e retorna sem adicionar a tarefa caso já exista
   const existingTasks = document.querySelectorAll('.task-item p');
   for (let i = 0; i < existingTasks.length; i++) {
     if (existingTasks[i].textContent === task) {
@@ -118,12 +117,12 @@ function saveTask(taskItem, newTaskText, newTaskDescription) {
   taskText.textContent = newTaskText;
   taskItem.replaceChild(taskText, taskItem.querySelector('.form-task-input'));
 
-  const taskDescriptionElem = taskItem.querySelector('.task-description'); // armazena a referência para o elemento taskDescription
+  const taskDescriptionElem = taskItem.querySelector('.task-description');
   const taskDescription = document.createElement('p');
   taskDescription.classList.add('task-description');
-  taskDescription.innerHTML = newTaskDescription; // Use innerHTML em vez de textContent
+  taskDescription.innerHTML = newTaskDescription;
 
-  taskItem.replaceChild(taskDescription, taskDescriptionElem); // Substituir textarea por p, usando a referência armazenada acima
+  taskItem.replaceChild(taskDescription, taskDescriptionElem);
 
   const taskEditButton = taskItem.querySelector('.button:first-of-type');
   taskEditButton.innerHTML = '<i class="material-symbols-outlined">edit</i>';
