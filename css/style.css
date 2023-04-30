@@ -92,6 +92,14 @@ header {
   margin-top: var(--spacing-large);
 }
 
+.Secont{
+  background-color: white;
+}
+
+.divsty{
+  padding-left: 10px;
+}
+
 .form-task-label {
 
 }
@@ -104,3 +112,8 @@ header {
   
 }
 
+.task-description {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #888;
+}
