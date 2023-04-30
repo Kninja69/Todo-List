@@ -72,8 +72,18 @@ function handleAddTaskClick() {
 }
 
 function editTask(taskItem) {
+  if (!taskItem) {
+    return;
+  }
   const taskText = taskItem.querySelector('p');
-  const taskDescription = taskItem.querySelector('span');
+  if (!taskText) {
+    return;
+  }
+  const taskDescription = taskItem.querySelector('.task-description');
+  if (!taskDescription) {
+    return;
+  }
+
   const taskEditTextbox = document.createElement('input');
 
   taskEditTextbox.classList.add('form-task-input');
@@ -81,43 +91,49 @@ function editTask(taskItem) {
   taskEditTextbox.value = taskText.textContent;
   taskItem.replaceChild(taskEditTextbox, taskText);
 
-  const descriptionEditTextbox = document.createElement('input');
-  descriptionEditTextbox.classList.add('form-task-input');
-  descriptionEditTextbox.setAttribute('type', 'text');
-  descriptionEditTextbox.value = taskDescription.textContent;
-  taskItem.replaceChild(descriptionEditTextbox, taskDescription);
+  const descriptionEditTextarea = document.createElement('textarea');
+  descriptionEditTextarea.classList.add('form-task-input');
+  descriptionEditTextarea.style.height = taskDescription.clientHeight + "px";
+  descriptionEditTextarea.value = taskDescription.textContent;
+  taskItem.replaceChild(descriptionEditTextarea, taskDescription);
 
   const taskEditButton = taskItem.querySelector('.button:first-of-type');
   taskEditButton.innerHTML = '<i class="material-symbols-outlined">save</i>';
-  taskEditButton.removeEventListener('click', function () {
+  taskEditButton.removeEventListener('click', onEditButtonClick);
+  function onEditButtonClick() {
     editTask(taskItem);
-  });
+  }
   taskEditButton.addEventListener('click', function () {
-    saveTask(taskItem, taskEditTextbox.value);
+    saveTask(taskItem, taskEditTextbox.value, descriptionEditTextarea.value);
   });
+  taskEditButton.addEventListener('click', onEditButtonClick);
 }
 
-function saveTask(taskItem, newTaskText) {
+function saveTask(taskItem, newTaskText, newTaskDescription) {
+  if (!newTaskText || !newTaskDescription || !taskItem) {
+    return;
+  }
+
   const taskText = document.createElement('p');
   taskText.textContent = newTaskText;
   taskItem.replaceChild(taskText, taskItem.querySelector('.form-task-input'));
 
+  const taskDescriptionElem = taskItem.querySelector('.task-description'); // armazena a referência para o elemento taskDescription
   const taskDescription = document.createElement('p');
   taskDescription.classList.add('task-description');
-  const descriptionEditTextbox = taskItem.querySelector('.form-task-input ~ .form-task-input');
-  taskDescription.textContent = descriptionEditTextbox.value;
-  taskItem.replaceChild(taskDescription, taskItem.querySelector('.form-task-description'));
+  taskDescription.innerHTML = newTaskDescription; // Use innerHTML em vez de textContent
+
+  taskItem.replaceChild(taskDescription, taskDescriptionElem); // Substituir textarea por p, usando a referência armazenada acima
 
   const taskEditButton = taskItem.querySelector('.button:first-of-type');
   taskEditButton.innerHTML = '<i class="material-symbols-outlined">edit</i>';
-  taskEditButton.removeEventListener('click', function () {
-    saveTask(taskItem, newTaskText);
-  });
-  taskEditButton.addEventListener('click', function () {
-    editTask(taskItem);
-  });
-}
+  taskEditButton.removeEventListener('click', onEditButtonClick);
+  taskEditButton.addEventListener('click', onEditButtonClick);
 
+  function onEditButtonClick() {
+    editTask(taskItem);
+  }
+}
 
 function deleteTask(taskItem) {
   taskItem.remove();
