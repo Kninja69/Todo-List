@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
     <link rel="icon" type="image/png" href="./image/icons/html-5.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"/>
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
-    <header>
-      <div class="container header-item">
-        <button class="button">
-          <i class="material-symbols-outlined"> menu </i>
-        </button>
 
+  <body>
+    <header class="Heasty">
+      <div class="container header-item Conhisty">
+        <button class="button menusty">
+          <i class="material-symbols-outlined">menu</i>
+        </button>
         <a href="https://www.linkedin.com/in/rafael-chaves-ds/" target="_blank">
           <img class="avatar" src="./image/assets/Rafael-Chaves.jpg" alt="Avatar" />
-       </a>
+        </a>
       </div>
     </header>
 
     <section class="Secsty">
-      <div class="container">
+      <div class="container contsty">
         <h1 class="title">Minhas tarefas</h1>
         <p class="subtitle">Chaves</p>
-        <form class="form-task">
-          <label class="form-task-label">Adicionar tarefa</label> <br>
-          <input class="form-task-input" type="text" name="" id="new-task" placeholder="Tarefa"/>
-          <!-- <textarea class="form-task-input" name="" id="new-task-description" placeholder="Descrição da tarefa" resize="both"></textarea> -->
+        <form class="form-task frmtksty">
+          <label class="form-task-label lbsty">Adicionar tarefa</label>
+          <input class="form-task-input insty" type="text" name="" id="new-task" placeholder="Tarefa" />
           <button class="button form-task-button btnaddsty">
             <i class="material-symbols-outlined">add</i>
           </button>
           <button type="button" id="clear-button" class="button form-task-button btncleansty">
             <i class="material-symbols-outlined">clear</i>
-          </button>          
+          </button>
         </form>
       </div>
     </section>
@@ -48,6 +47,7 @@
     <section class="task-list Secont">
       <div class="container divsty"></div>
     </section>
+
 
 
     <script src="./js/script.js"></script>
