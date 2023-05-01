@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Todo List</title>
+    <link rel="icon" type="image/png" href="./image/icons/html-5.png">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link rel="stylesheet"
@@ -19,24 +20,25 @@
         <button class="button">
           <i class="material-symbols-outlined"> menu </i>
         </button>
+
         <a href="https://www.linkedin.com/in/rafael-chaves-ds/" target="_blank">
-          <img src="./assets/Rafael-Chaves.jpg" alt="Imagem de Rafael Chaves" class="avatar" />
+          <img class="avatar" src="./image/assets/Rafael-Chaves.jpg" alt="Avatar" />
        </a>
       </div>
     </header>
 
-    <section>
+    <section class="Secsty">
       <div class="container">
         <h1 class="title">Minhas tarefas</h1>
         <p class="subtitle">Chaves</p>
         <form class="form-task">
-          <label class="form-task-label">Adicionar tarefa</label>
-          <input class="form-task-input" type="text" name="" id="new-task" placeholder="Nome da tarefa"/>
-        
-          <button class="button form-task-button">
+          <label class="form-task-label">Adicionar tarefa</label> <br>
+          <input class="form-task-input" type="text" name="" id="new-task" placeholder="Tarefa"/>
+          <!-- <textarea class="form-task-input" name="" id="new-task-description" placeholder="Descrição da tarefa" resize="both"></textarea> -->
+          <button class="button form-task-button btnaddsty">
             <i class="material-symbols-outlined">add</i>
           </button>
-          <button class="button form-task-button">
+          <button type="button" id="clear-button" class="button form-task-button btncleansty">
             <i class="material-symbols-outlined">clear</i>
           </button>          
         </form>

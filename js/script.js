@@ -1,6 +1,11 @@
 const form = document.querySelector('.form-task');
 const taskInput = document.querySelector('#new-task');
+const clearButton = document.getElementById("clear-button");
+const clenInput = document.getElementById("new-task");
 const taskList = document.querySelector('.task-list .container');
+const border = document.querySelector('.Secont');
+const createTaskButton = document.querySelector('#create-task-button');
+const taskItems = taskList.querySelectorAll('.task-item');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -8,26 +13,44 @@ form.addEventListener('submit', function(event) {
   if (newTask !== '') {
     taskadd(newTask);
     taskInput.value = '';
+    updateTaskList();
   }
 });
+
+clearButton.addEventListener("click", () => {
+  clenInput.value = "";
+});
+
+function updateTaskList() {
+  const taskItems = taskList.querySelectorAll('.task-item');
+  if (taskItems.length > 0) {
+    border.classList.add('bordersty');
+  } else {
+    border.classList.remove('bordersty');
+  }
+}
 
 function taskadd(task) {
   if (task.trim() !== '') {
     const taskItem = document.createElement('div');
     taskItem.classList.add('task-item');
 
+    border.classList.add('bordersty');
+
     const taskCheckbox = document.createElement('input');
+    taskCheckbox.classList.add('checkboxsty');
     taskCheckbox.setAttribute('type', 'checkbox');
     taskCheckbox.setAttribute('name', 'completed');
     taskItem.appendChild(taskCheckbox);
 
     const taskText = document.createElement('p');
+    taskText.classList.add('psty');
     taskText.textContent = task;
     taskItem.appendChild(taskText);
 
     const taskEditButton = document.createElement('button');
     taskEditButton.classList.add('button');
-    taskEditButton.innerHTML = '<i class="material-symbols-outlined">edit</i>';
+    taskEditButton.innerHTML = '<i class="material-symbols-outlined editbtnsty">edit</i>';
     taskEditButton.addEventListener('click', function() {
       editTask(taskItem);
     });
@@ -35,7 +58,7 @@ function taskadd(task) {
 
     const taskDeleteButton = document.createElement('button');
     taskDeleteButton.classList.add('button');
-    taskDeleteButton.innerHTML = '<i class="material-symbols-outlined">delete</i>';
+    taskDeleteButton.innerHTML = '<i class="material-symbols-outlined btnsty">delete</i>';
     taskDeleteButton.addEventListener('click', function() {
       deleteTask(taskItem);
     });
@@ -47,7 +70,7 @@ function taskadd(task) {
 
 function editTask(taskItem) {
   const taskText = taskItem.querySelector('p');
-  if (taskText) { // adiciona verificação
+  if (taskText) {
     const taskEditTextbox = document.createElement('input');
     taskEditTextbox.classList.add('form-task-input');
     taskEditTextbox.setAttribute('type', 'text');
@@ -55,7 +78,7 @@ function editTask(taskItem) {
     taskItem.replaceChild(taskEditTextbox, taskText);
 
     const taskEditButton = taskItem.querySelector('.button:first-of-type');
-    taskEditButton.innerHTML = '<i class="material-symbols-outlined">save</i>';
+    taskEditButton.innerHTML = '<i class="material-symbols-outlined btnsty">save</i>';
     taskEditButton.removeEventListener('click', function() {
       editTask(taskItem);
     });
@@ -77,7 +100,7 @@ function saveTask(taskItem, newTaskText) {
   }
 
   const taskEditButton = taskItem.querySelector('.button:first-of-type');
-  taskEditButton.innerHTML = '<i class="material-symbols-outlined">edit</i>';
+  taskEditButton.innerHTML = '<i class="material-symbols-outlined btnsty">edit</i>';
   taskEditButton.removeEventListener('click', function() {
     saveTask(taskItem, newTaskText);
   });
@@ -88,4 +111,10 @@ function saveTask(taskItem, newTaskText) {
 
 function deleteTask(taskItem) {
   taskItem.remove();
+  updateTaskList();
+  
+  const allTasks = taskList.querySelectorAll('.task-list-item');
+  if (taskItems.length === 0) { 
+    border.classList.remove('bordersty');
+  }  
 }

@@ -45,7 +45,7 @@ h5, h6 {
 
 header {
   padding-top: var(--spacing-medium);
-  padding-bottom: var(--spacing-medium);
+  background-color: var(--color-interface-light);
 }
 
 .header-item {
@@ -64,9 +64,6 @@ header {
 }
 
 .title {
-  line-height: 1.5;
-  letter-spacing: -1px;
-  font-weight: 300;
   color: var(--color-text-light);
 }
 
@@ -82,10 +79,18 @@ header {
   margin-right: auto;
 }
 
+.Secsty{
+  background-color: var(--color-interface-light);
+  padding-bottom: 10px;
+}
+
 .avatar {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  object-fit: cover;
+  transform-origin: right top;
+  transform: scale(1.5);
 }
 
 .form-task {
@@ -93,27 +98,61 @@ header {
 }
 
 .Secont{
-  background-color: white;
+  background-color: var(--color-common-light);
+}
+
+.bordersty{
+  border-top: 1px solid var(--color-interface-dark);
+  border-top-right-radius: 80px;
 }
 
 .divsty{
   padding-left: 10px;
-}
-
-.form-task-label {
-
-}
-
-.form-task-input {
-
-}
-
-.form-task-button {
   
 }
 
-.task-description {
+.form-task-label {
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.form-task-input {
+  height: 27px;
+  margin-top: -1px;
+}
+
+.sit{
+  margin-bottom: -50px;
+}
+
+.btnaddsty {
+  background-color: var(--color-feedback-success);
+  color: var(--color-common-light);
+  border-radius: 2px;
+  padding: 2px 10px;
+}
+
+.btncleansty{
+  background-color: var(--color-feedback-error);
+  color: var(--color-common-light);
+  border-radius: 2px;
+  padding: 2px 10px;
+}
+
+.editbtnsty{
+  margin-left: 1445px;
+}
+
+.psty{
+  margin-left: 80px;
+}
+
+.checkboxsty{
+  margin-top: 10px;
+}
+
+/* .task-description {
   font-size: 14px;
   margin-top: 4px;
   color: #888;
-}
+} */
