@@ -22,7 +22,6 @@
   --spacing-medium: 24px;
   --spacing-large: 32px;
   --spacing-xlarge: 40px;
-
 }
 
 body {
@@ -45,10 +44,6 @@ header {
   display: flex;
   justify-content: space-between;
 }
-/* header > div.container {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .button {
   border: 0;
@@ -74,7 +69,6 @@ header {
 
 .Secsty{
   background-color: var(--color-interface-light);
-  padding-bottom: 10px;
 }
 
 .avatar {
@@ -83,24 +77,19 @@ header {
   border-radius: 50%; 
   object-fit: cover;
   transform-origin: right top;
-  transform: scale(1.5);
 }
 
 .form-task {
   margin-top: var(--spacing-large);
 }
 
+.insty{
+  border: 1px solid var(--color-text-dark);
+  border-radius: 2px;
+}
+
 .Secont{
   background-color: var(--color-common-light);
-}
-
-.bordersty{
-  border-top: 1px solid var(--color-interface-dark);
-  border-top-right-radius: 80px;
-}
-
-.divsty{
-  padding-left: 10px;
 }
 
 .form-task-label {
@@ -110,52 +99,40 @@ header {
 
 .form-task-input {
   height: 27px;
-  margin-top: -1px;
 }
 
-.sit{
-  margin-bottom: -50px;
+.bordersty{
+  border-top: 1px solid var(--color-text-dark);
+}
+
+input[type="checkbox"]{
+  margin: 0px;
 }
 
 .btnaddsty {
   background-color: var(--color-feedback-success);
   color: var(--color-common-light);
   border-radius: 2px;
-  padding: 2px 10px;
 }
 
 .btncleansty{
   background-color: var(--color-feedback-error);
   color: var(--color-common-light);
   border-radius: 2px;
-  padding: 2px 10px;
-}
-
-.editbtnsty{
-  margin-left: 1445px;
-}
-
-.psty{
-  margin-left: 80px;
-}
-
-.checkboxsty{
-  margin-top: 10px;
 }
 
 @media screen and (min-width: 279px) {
+  body{
+    margin: 0px;
+  }
   .Heasty{
     height: 37px;
   }
   .Conhisty{
     height: 35px;
+    margin-top: 10px;
   }
   .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; 
-    object-fit: cover;
-    transform-origin: right top;
     transform: scale(0.3);
   }
   .menusty{
@@ -177,6 +154,7 @@ header {
     font-weight: 600;
   }
   .frmtksty{
+    margin-top: 25px;
     display: inline-block;
   }
   .lbsty, .insty{
@@ -189,5 +167,50 @@ header {
   }
   .insty{
     margin-top: -2px;
+  }
+  .btnaddsty{
+    position: absolute;
+    top: 134px;
+    right: 57px;
+    padding: 1px 5px;
+  }
+  .btncleansty{
+    position: absolute;
+    top: 134px;
+    right: 19px;
+    padding: 1px 5px;
+  }
+  .Secont{
+    margin-top: 21px;
+  }
+  .task-item{
+    height: 58px;
+  }
+  .bordersty{
+    border-top-right-radius: 25px;
+  }
+  .checkboxsty{
+    position: absolute;
+    top: 212px;
+    transform: scale(0.8);
+  }
+  .psty{
+    position: absolute;
+    top: 191px;
+    left: 31px;
+    margin-left: 0px;
+  }
+  .editbtnsty{
+    position: absolute;
+    right: 31px;
+    padding: 0px;
+    transform: scale(0.7);
+    color: var(--color-text-dark);
+  }
+  .delbtnsty{
+    position: absolute;
+    right: 5px;
+    transform: scale(0.7);
+    color: var(--color-text-dark);
   }
 }

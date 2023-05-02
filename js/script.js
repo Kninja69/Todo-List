@@ -58,7 +58,7 @@ function taskadd(task) {
 
     const taskDeleteButton = document.createElement('button');
     taskDeleteButton.classList.add('button');
-    taskDeleteButton.innerHTML = '<i class="material-symbols-outlined btnsty">delete</i>';
+    taskDeleteButton.innerHTML = '<i class="material-symbols-outlined delbtnsty">delete</i>';
     taskDeleteButton.addEventListener('click', function() {
       deleteTask(taskItem);
     });
@@ -72,7 +72,7 @@ function editTask(taskItem) {
   const taskText = taskItem.querySelector('p');
   if (taskText) {
     const taskEditTextbox = document.createElement('input');
-    taskEditTextbox.classList.add('form-task-input');
+    taskEditTextbox.classList.add('form-task-input ineditsty');
     taskEditTextbox.setAttribute('type', 'text');
     taskEditTextbox.value = taskText.textContent;
     taskItem.replaceChild(taskEditTextbox, taskText);
