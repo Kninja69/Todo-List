@@ -62,8 +62,8 @@ function taskadd(task) {
     taskDeleteButton.addEventListener('click', function() {
       deleteTask(taskItem);
     });
-    taskItem.appendChild(taskDeleteButton);
 
+    taskItem.appendChild(taskDeleteButton);
     taskList.appendChild(taskItem);
   }
 }
@@ -82,6 +82,7 @@ function editTask(taskItem) {
     taskEditButton.removeEventListener('click', function() {
       editTask(taskItem);
     });
+
     taskEditButton.addEventListener('click', function() {
       saveTask(taskItem, taskEditTextbox.value);
     });
@@ -104,6 +105,7 @@ function saveTask(taskItem, newTaskText) {
   taskEditButton.removeEventListener('click', function() {
     saveTask(taskItem, newTaskText);
   });
+
   taskEditButton.addEventListener('click', function() {
     editTask(taskItem);
   });

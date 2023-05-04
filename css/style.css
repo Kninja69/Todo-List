@@ -83,13 +83,17 @@ header {
   margin-top: var(--spacing-large);
 }
 
-.insty{
+.form-task-input{
   border: 1px solid var(--color-text-dark);
   border-radius: 2px;
+  
 }
 
-.Secont{
+.container-task-style{
   background-color: var(--color-common-light);
+  width: 100%;
+  border-top: 1px solid var(--color-text-dark);
+  margin-top: 53px;
 }
 
 .form-task-label {
@@ -101,22 +105,12 @@ header {
   height: 27px;
 }
 
-.bordersty{
-  border-top: 1px solid var(--color-text-dark);
-}
-
 input[type="checkbox"]{
   margin: 0px;
 }
 
-.btnaddsty {
+.form-task-button {
   background-color: var(--color-feedback-success);
-  color: var(--color-common-light);
-  border-radius: 2px;
-}
-
-.btncleansty{
-  background-color: var(--color-feedback-error);
   color: var(--color-common-light);
   border-radius: 2px;
 }
@@ -125,20 +119,20 @@ input[type="checkbox"]{
   body{
     margin: 0px;
   }
-  .Heasty{
+  .Header-style{
     height: 37px;
   }
-  .Conhisty{
+  .header-item{
     height: 40px;
     margin-top: 10px;
   }
   .avatar {
     transform: scale(0.3);
   }
-  .menusty{
+  .menu-style{
     padding: 0px;
   }
-  .contsty{
+  .container-style{
     margin-left: 9px;
     margin-right: 0px;
   }
@@ -153,19 +147,19 @@ input[type="checkbox"]{
     font-size: 0.7em;
     font-weight: 600;
   }
-  .frmtksty{
+  .form-task{
     margin-top: 25px;
     display: inline-block;
   }
-  .lbsty, .insty{
+  .form-task-label, .form-task-input{
     display: inline-block;
     vertical-align: middle;
   }
-  .lbsty{
+  .form-task-label{
     font-size: 0.8em;
     margin-bottom: 0px;
   }
-  .insty{
+  .form-task-input{
     position: absolute;
     top: 139px;
     left: 8px;
@@ -176,25 +170,16 @@ input[type="checkbox"]{
     top: 4px;
     left: 0px;
   }
-  .btnaddsty{
+  .form-task-button{
     position: absolute;
     top: 134px;
     left: 186px;
     padding: 1px 5px;
   }
-  .btncleansty{
-    position: absolute;
-    top: 134px;
-    left: 221px;
-    padding: 1px 5px;
-  }
-  .Secont{
-    margin-top: 21px;
-  }
   .task-item{
     height: 58px;
   }
-  .bordersty{
+  .container-task-style{
     border-top-right-radius: 25px;
   }
   .checkboxsty{
@@ -222,16 +207,18 @@ input[type="checkbox"]{
     color: var(--color-text-dark);
   }
 }
+
 @media screen and (min-width: 360px){
-  .menusty{
+  .menu-style{
     margin-top: -5px;
   }
   .avatar{
     transform: scale(0.32);
   }
 }
+
 @media screen and (min-width: 375px){
-  .insty{
+  .form-task-input{
     width: 206px;
     top: 143px;
   }
@@ -245,33 +232,37 @@ input[type="checkbox"]{
   .subtitle{
     font-size: 0.7em;
   }
-  .lbsty{
+  .form-task-label{
     font-size: 1em;
   }
 }
+
 @media screen and (min-width: 390px){
   .avatar{
     transform: scale(0.27);
   }
 }
+
 @media screen and (min-width: 412px){
   .avatar{
     transform: scale(0.28);
   }
 }
+
 @media screen and (min-width: 540px){
-  .insty{
+  .form-task-input{
     width: 244px;
   }
   .btnsty{
     left: 77px;
   }
 }
+
 @media screen and (min-width: 601px){
-  .menusty{
+  .menu-style{
     margin-left: -10px;
   }
-  .insty{
+  .form-task-input{
     width: 269px;
     height: 30px;
   }
@@ -280,11 +271,12 @@ input[type="checkbox"]{
     top: 9px;
   }
 }
+
 @media screen and (min-width: 768px){
   .avatar{
     transform: scale(0.3);
   }
-  .menusty{
+  .menu-style{
     margin-left: -16px;
   }
 
