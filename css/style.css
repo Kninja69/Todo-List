@@ -1,4 +1,8 @@
-:root {
+/* 
+  1TDSPX - Rafael Chaves da Silva - RM99643
+*/
+
+:root{
   --color-brand-primary: #1d99ff;
   --color-brand-secondary: #ff455b;
   
@@ -24,50 +28,51 @@
   --spacing-xlarge: 40px;
 }
 
-body {
+body{
   font-family: 'Open Sans', Arial, Helvetica, 'Ubuntu', sans-serif;
   font-size: 16px;
   background-color: var(--color-interface-light);
 }
 
-h1, h2,
-h3, h4,
-h5, h6 {
+h1, h2, h3, 
+h4, h5, h6 {
   font-weight: normal;
 }
 
-header {
+header{
   background-color: var(--color-interface-light);
 }
 
-.header-item {
+.header-item{
   display: flex;
   justify-content: space-between;
 }
 
-.button {
+.button{
   border: 0;
   background-color: transparent;
   cursor: pointer;
 }
 
-.title {
+.title{
   color: var(--color-text-light);
 }
 
-.subtitle {
+.subtitle{
   line-height: 1.2;
   font-weight: 700;
   color: var(--color-brand-primary);
 }
 
-.container {
+.container{
   width: 94%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.avatar {
+.avatar{
+  position: absolute;
+  right: auto;
   width: 100px;
   height: 100px;
   border-radius: 50%; 
@@ -75,7 +80,12 @@ header {
   transform-origin: right top;
 }
 
-.form-task {
+.menu-style{
+  position: absolute;
+  left: auto;
+}
+
+.form-task{
   margin-top: var(--spacing-large);
 }
 
@@ -93,12 +103,12 @@ header {
   margin-top: 53px;
 }
 
-.form-task-label {
+.form-task-label{
   color: var(--color-text-dark);
   font-weight: 500;
 }
 
-.form-task-input {
+.form-task-input{
   height: 27px;
 }
 
@@ -106,7 +116,7 @@ input[type="checkbox"]{
   background-color: var(--color-common-light);
 }
 
-.form-task-button {
+.form-task-button{
   background-color: var(--color-feedback-success);
   color: var(--color-common-light);
   border-radius: 2px;
@@ -167,6 +177,9 @@ input[type="checkbox"]{
   top: auto;
 }
 
+
+/*Começo das médias queries.*/
+
 @media screen and (min-width: 279px){
   body{
     margin: 0px;
@@ -178,8 +191,9 @@ input[type="checkbox"]{
     height: 40px;
     margin-top: 10px;
   }
-  .avatar {
+  .avatar{
     transform: scale(0.3);
+    right: 8px;
   }
   .menu-style{
     padding: 0px;
@@ -215,11 +229,10 @@ input[type="checkbox"]{
     position: absolute;
     top: 139px;
     left: 8px;
-    margin-top: -2px;
   }
   .form-task-button{
     position: absolute;
-    top: 138px;
+    top: 140px;
     left: 186px;
     padding: 1px 5px;
   }
@@ -236,7 +249,7 @@ input[type="checkbox"]{
     left: 25px;
     top: 218px;
   }
-  .p-two {
+  .p-two{
     margin-top: 35px;
   }
   .btn-style-one{
@@ -252,7 +265,7 @@ input[type="checkbox"]{
   .symbols-edit-style, .symbols-delete-style{
     transform: scale(0.7);
   }
-  .checkbox-two {
+  .checkbox-two{
     margin-top: 16px;
   }
   #checkbox-style{
@@ -264,7 +277,8 @@ input[type="checkbox"]{
 
 @media screen and (min-width: 360px){
   .menu-style{
-    margin-top: -5px;
+    top: 7px;
+    left: 7px;
   }
   .avatar{
     transform: scale(0.32);
@@ -285,6 +299,16 @@ input[type="checkbox"]{
   .form-task-label{
     font-size: 1em;
   }
+  .form-task-button{
+    top: 142px;
+    left: 223px;
+  }
+  .p-style{
+    font-size: 0.8em;
+  }
+  #checkbox-style{
+    top: 20px;
+  }
 }
 
 @media screen and (min-width: 390px){
@@ -303,15 +327,8 @@ input[type="checkbox"]{
   .form-task-input{
     width: 244px;
   }
-}
-
-@media screen and (min-width: 601px){
-  .menu-style{
-    margin-left: -10px;
-  }
-  .form-task-input{
-    width: 269px;
-    height: 30px;
+  .form-task-button{
+    left: 261px;
   }
 }
 
@@ -319,7 +336,89 @@ input[type="checkbox"]{
   .avatar{
     transform: scale(0.3);
   }
-  .menu-style{
-    margin-left: -16px;
+  .form-task-button{
+    top: 142px;
+    left: 262px;
+  }
+  .p-style{
+    width: 158px;
+    font-size: 1em;
+    top: 216px;
+  }
+}
+
+@media screen and (min-width: 820px){
+  .avatar{
+    transform: scale(0.33);
+  }
+  .title{
+    font-size: 1.7em;
+  }
+  .subtitle{
+    font-size: 0.8em;
+  }
+  .form-task-input{
+    width: 272px;
+    height: 33px;
+    top: 154px;
+  }
+  .form-task-button{
+    top: 154px;
+    left: 289px;
+    padding: 3px 8px;
+  }
+  .symbols-edit-style, .symbols-delete-style{
+    transform: scale(0.8);
+  }
+  .btn-style-one, .btn-style-two{
+    right: 12px;
+  }
+  .btn-style-one{
+    top: 219px;
+  }
+  .btn-style-two{
+    top: 254px;
+  }
+  .p-style{
+    width: 167px;
+    font-size: 1.2em;
+  }
+  #checkbox-style{
+    top: 13px;
+  }
+}
+
+@media screen and (min-width: 912px){
+  .p-style{
+    top: 219px;
+    width: 255px;
+    letter-spacing: var(--spacing-xsmall);
+  }
+  #checkbox-style{
+    top: 15px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .avatar{
+    transform: scale(0.38);
+  }
+  .subtitle{
+    font-size: 0.9em;
+  }
+  .form-task-input{
+    width: 318px;
+    height: 36px;
+  }
+  .form-task-button{
+    top: 155px;
+    left: 337px;
+    padding: 4px 12px;
+  }
+  .symbols-edit-style, .symbols-delete-style{
+    transform: scale(0.9);
+  }
+  .symbols-edit-style{
+    margin-right: 26px;
   }
 }
