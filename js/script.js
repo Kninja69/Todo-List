@@ -1,3 +1,5 @@
+// 1TDSPX - Rafael Chaves da Silva - RM99643
+
 const form = document.querySelector('.form-task');
 const taskInput = document.querySelector('#new-task');
 const clearButton = document.getElementById("clear-button");
